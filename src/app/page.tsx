@@ -5,7 +5,6 @@ import { Hero } from "@/components/sections/hero";
 import { HiringBanner } from "@/components/sections/hiring-banner";
 import { LogoMarquee } from "@/components/sections/logo-marquee";
 import { ProductTeaser } from "@/components/sections/product-teaser";
-import { ValuesGrid } from "@/components/sections/values-grid";
 import { defaultDescription, siteName } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -33,7 +32,6 @@ export default function Home() {
       <LogoMarquee />
       <HomeWhatWeDoIntro />
       <FeatureCards />
-      <ValuesGrid />
       <ProductTeaser />
       <HiringBanner />
     </main>

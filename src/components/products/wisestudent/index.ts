@@ -1,0 +1,9 @@
+export { WiseStudentAudiences } from "./wisestudent-audiences";
+export { WiseStudentCta } from "./wisestudent-cta";
+export { WiseStudentDifferent } from "./wisestudent-different";
+export { WiseStudentHero } from "./wisestudent-hero";
+export { WiseStudentHowItWorks } from "./wisestudent-how-it-works";
+export { WiseStudentProblem } from "./wisestudent-problem";
+export { WiseStudentSolution } from "./wisestudent-solution";
+export { WiseStudentStatus } from "./wisestudent-status";
+export { WiseStudentWhyMatters } from "./wisestudent-why-matters";

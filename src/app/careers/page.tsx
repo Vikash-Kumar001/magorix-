@@ -1,13 +1,14 @@
 import { CareersApplyCta } from "@/components/careers/careers-apply-cta";
 import { CareersHero } from "@/components/careers/careers-hero";
+import { CareersLookingFor } from "@/components/careers/careers-looking-for";
 import { CareersRoles } from "@/components/careers/careers-roles";
-import { CareersWhy } from "@/components/careers/careers-why";
+import { CareersWhyJoin } from "@/components/careers/careers-why-join";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
   title: "Careers",
   description:
-    "Join Magorix—early-stage team, open roles, why we work here, and how to apply. Remote-first, India-focused.",
+    "Join Magorix—high ownership, real education problems, open roles across engineering and product, and a simple application process.",
   path: "/careers",
 });
 
@@ -15,7 +16,8 @@ export default function CareersPage() {
   return (
     <main className="flex flex-col bg-background">
       <CareersHero />
-      <CareersWhy />
+      <CareersWhyJoin />
+      <CareersLookingFor />
       <CareersRoles />
       <CareersApplyCta />
     </main>

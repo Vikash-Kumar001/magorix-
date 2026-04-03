@@ -1,6 +1,12 @@
-import { Target, Telescope } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+
+const VISION_POINTS = [
+  "Financial awareness",
+  "Emotional strength",
+  "Strong values",
+  "Real-world readiness",
+] as const;
 
 type AboutMissionVisionProps = {
   className?: string;
@@ -16,60 +22,53 @@ export function AboutMissionVision({ className }: AboutMissionVisionProps) {
       aria-labelledby="about-mission-heading"
     >
       <Container>
-        <div className="grid gap-6 md:grid-cols-2 md:gap-8 lg:gap-10">
-          <article
-            className={cn(
-              "flex flex-col gap-4 rounded-xl border border-white/[0.09] bg-[#0c111c] p-6 md:p-7",
-              "shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset]",
-              "transition-[border-color,box-shadow,background-color] duration-300 ease-out",
-              "hover:border-accent/30 hover:bg-[#0d121c] hover:shadow-[0_0_48px_-20px_rgba(79,142,247,0.22)]"
-            )}
-          >
-            <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.04] text-accent">
-              <Target className="h-5 w-5" strokeWidth={1.75} aria-hidden />
-            </div>
-            <div>
-              <h2
-                id="about-mission-heading"
-                className="font-heading text-xl font-semibold tracking-tight text-foreground md:text-2xl"
-              >
-                Our Mission
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/62 md:text-[15px]">
-                Equip schools and families with calm, purposeful products—built
-                for how India actually teaches—so educators lead, families stay
-                informed, and students stay at the center of every decision we
-                ship.
-              </p>
-            </div>
-          </article>
+        <div className="max-w-5xl">
+          <div className="rounded-3xl border border-accent/15 bg-[linear-gradient(135deg,rgba(79,142,247,0.08),rgba(255,255,255,0.02))] p-1 shadow-[0_24px_60px_-32px_rgba(79,142,247,0.2)]">
+            <div className="overflow-hidden rounded-[1.35rem] border border-white/[0.06] bg-[#080a10]">
+              <div className="grid md:grid-cols-2">
+                <article className="border-b border-white/[0.07] p-6 md:border-b-0 md:border-r md:border-white/[0.07] md:p-8">
+                  <h2
+                    id="about-mission-heading"
+                    className="font-heading text-xs font-semibold uppercase tracking-[0.22em] text-accent/85"
+                  >
+                    Our Mission
+                  </h2>
+                  <p className="mt-4 font-heading text-2xl font-semibold leading-tight tracking-[-0.03em] text-foreground md:text-[1.75rem] lg:text-[2rem]">
+                    To prepare students for life before life tests them.
+                  </p>
+                </article>
 
-          <article
-            className={cn(
-              "flex flex-col gap-4 rounded-xl border border-white/[0.09] bg-[#0c111c] p-6 md:p-7",
-              "shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset]",
-              "transition-[border-color,box-shadow,background-color] duration-300 ease-out",
-              "hover:border-accent/30 hover:bg-[#0d121c] hover:shadow-[0_0_48px_-20px_rgba(79,142,247,0.22)]"
-            )}
-          >
-            <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.04] text-accent">
-              <Telescope className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                <article className="p-6 md:p-8">
+                  <h2
+                    id="about-vision-heading"
+                    className="font-heading text-xs font-semibold uppercase tracking-[0.22em] text-foreground/45"
+                  >
+                    Our Vision
+                  </h2>
+                  <p className="mt-4 font-heading text-lg font-semibold leading-snug text-foreground md:text-xl">
+                    A future where every student grows up with:
+                  </p>
+                  <ul className="mt-5 space-y-2.5">
+                    {VISION_POINTS.map((line) => (
+                      <li
+                        key={line}
+                        className="flex gap-3 text-base leading-snug text-foreground/85 md:text-[17px]"
+                      >
+                        <span
+                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                          aria-hidden
+                        />
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 border-t border-white/[0.08] pt-5 text-sm font-medium leading-relaxed text-foreground/65 md:text-base">
+                    - not by chance, but by design.
+                  </p>
+                </article>
+              </div>
             </div>
-            <div>
-              <h2
-                id="about-vision-heading"
-                className="font-heading text-xl font-semibold tracking-tight text-foreground md:text-2xl"
-              >
-                Our Vision
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/62 md:text-[15px]">
-                A future where Bharat&apos;s institutions run on software that
-                respects context, language, and pace—clear, accountable, and
-                student-first—without stitching together a dozen vendors or
-                sacrificing control in the name of &quot;innovation.&quot;
-              </p>
-            </div>
-          </article>
+          </div>
         </div>
       </Container>
     </section>

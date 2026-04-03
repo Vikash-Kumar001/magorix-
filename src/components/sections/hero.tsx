@@ -9,9 +9,9 @@ import { staggerContainer, staggerItem } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const headingLines = [
-  "We're building the",
-  "infrastructure for",
-  "tomorrow's learners.",
+  "We are building the infrastructure",
+  "for life-readiness helping students",
+  "grow beyond academics.",
 ] as const;
 
 export function Hero() {
@@ -43,7 +43,7 @@ export function Hero() {
         >
           <motion.div variants={staggerItem}>
             <Badge className="border-white/12 bg-white/[0.07] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/85">
-              Now building the future of education
+              Building Humans. Not Just Students.
             </Badge>
           </motion.div>
 
@@ -64,10 +64,9 @@ export function Hero() {
 
           <motion.p
             variants={staggerItem}
-            className="mt-8 max-w-2xl text-base font-medium leading-relaxed text-foreground/65 md:mt-10 md:text-lg"
+            className="mt-8 text-sm font-semibold uppercase tracking-[0.16em] text-foreground/55 md:mt-10 md:text-base"
           >
-            An EdTech company on a mission to transform how schools, students,
-            and parents experience education in India.
+            Beyond subjects. Preparing for life.
           </motion.p>
 
           <motion.div
@@ -92,7 +91,7 @@ export function Hero() {
                 "min-h-[48px] px-8 py-3.5 text-base font-semibold"
               )}
             >
-              What we do
+              Explore WiseStudent
             </Link>
           </motion.div>
         </motion.div>

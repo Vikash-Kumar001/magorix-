@@ -1,17 +1,11 @@
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
-const MILESTONES = [
-  { year: "2023", title: "Founded" },
-  { year: "2024", title: "First school onboarded" },
-  { year: "2025", title: "Platform launch" },
-] as const;
-
-const STORY_PARAGRAPHS = [
-  "Magorix began as a small team asking why school technology so often adds noise instead of clarity. We spent our early months listening to administrators, teachers, and parents—mapping where work breaks down and where trust is lost.",
-  "Those conversations shaped our first products: tools that respect how Indian institutions actually operate, from classrooms to family communication. We did not start with a slide deck; we started with problems we could name on a campus.",
-  "As we grew, we kept one rule: ship with schools, not around them. Every release is tested against real timetables, real permissions, and real families—not a generic idea of “EdTech.”",
-  "Today we are a focused product company with Wise Student and Inavora—each with its own roadmap—united by the belief that education deserves software as intentional as the people running it.",
+const CAPABILITIES = [
+  "Think clearly",
+  "Act responsibly",
+  "Make better decisions",
+  "Handle real-life challenges",
 ] as const;
 
 type AboutTimelineProps = {
@@ -25,58 +19,69 @@ export function AboutTimeline({ className }: AboutTimelineProps) {
         "border-b border-white/[0.06] bg-background py-section-sm md:py-section",
         className
       )}
-      aria-labelledby="about-story-heading"
+      aria-labelledby="about-building-heading"
     >
       <Container>
         <h2
-          id="about-story-heading"
+          id="about-building-heading"
           className="font-heading text-2xl font-bold tracking-tight text-foreground md:text-3xl"
         >
-          Our story
+          What We Are Building
         </h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/60 md:text-base">
-          How we started, what we learned with schools, and where we are headed.
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-foreground/62 md:text-lg">
+          Magorix is building WiseStudent, a life-readiness platform designed to
+          help students grow beyond academics.
+        </p>
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-foreground/62 md:text-lg">
+          Not just as learners, but as individuals who can:
         </p>
 
-        <div className="mt-10 grid min-w-0 gap-10 md:mt-12 lg:grid-cols-2 lg:gap-14 lg:items-start">
-          {/* Left: timeline */}
-          <div className="min-w-0">
-            <p className="font-heading text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/40">
-              Milestones
-            </p>
-            <div className="relative mt-6 max-w-md">
+        <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:gap-10 lg:items-stretch">
+          <div className="lg:col-span-7">
+            <div className="relative rounded-2xl border border-white/[0.08] bg-[#0a0d14] p-6 md:p-8">
               <div
-                className="absolute left-[7px] top-3 bottom-3 w-px bg-gradient-to-b from-accent/55 via-white/15 to-white/5 md:left-[9px]"
+                className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_80%_60%_at_0%_0%,rgba(79,142,247,0.12),transparent_55%)]"
                 aria-hidden
               />
-              <ol className="relative list-none space-y-0 pl-0">
-                {MILESTONES.map((item) => (
+              <ol className="relative space-y-0">
+                {CAPABILITIES.map((line, i) => (
                   <li
-                    key={item.year}
-                    className="relative pb-10 pl-10 last:pb-0 md:pl-12"
+                    key={line}
+                    className={cn(
+                      "flex gap-5 py-5 first:pt-0 last:pb-0 md:gap-6 md:py-6",
+                      i !== CAPABILITIES.length - 1 &&
+                        "border-b border-white/[0.07]"
+                    )}
                   >
                     <span
-                      className="absolute left-0 top-1.5 flex h-[18px] w-[18px] items-center justify-center rounded-full border border-accent/40 bg-background shadow-[0_0_0_4px_#080C14,0_0_14px_rgba(79,142,247,0.35)] md:top-2"
+                      className="font-heading text-3xl font-bold tabular-nums leading-none text-accent/35 md:text-4xl"
                       aria-hidden
                     >
-                      <span className="h-2 w-2 rounded-full bg-accent" />
+                      {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="font-heading text-base font-semibold tracking-tight text-foreground md:text-lg">
-                      <span className="text-accent">{item.year}</span>
-                      <span className="text-foreground/35"> — </span>
-                      {item.title}
-                    </p>
+                    <span className="min-w-0 pt-1 font-heading text-lg font-semibold leading-snug tracking-tight text-foreground md:text-xl">
+                      {line}
+                    </span>
                   </li>
                 ))}
               </ol>
             </div>
           </div>
 
-          {/* Right: origin narrative */}
-          <div className="min-w-0 space-y-5 text-sm leading-relaxed text-foreground/62 md:text-[15px]">
-            {STORY_PARAGRAPHS.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
+          <div className="flex lg:col-span-5">
+            <div className="flex w-full flex-col justify-between rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/[0.14] via-[#0c111c] to-[#080c14] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] md:p-8">
+              <div>
+                <p className="inline-flex rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+                  WiseStudent
+                </p>
+                <p className="mt-6 font-heading text-2xl font-semibold leading-[1.15] tracking-[-0.03em] text-white md:text-[1.75rem]">
+                  This is not another learning app.
+                </p>
+              </div>
+              <p className="mt-8 border-t border-white/10 pt-6 text-base font-medium leading-relaxed text-accent md:text-lg">
+                It is a system that focuses on real growth.
+              </p>
+            </div>
           </div>
         </div>
       </Container>

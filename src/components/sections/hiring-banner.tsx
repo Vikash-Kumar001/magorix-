@@ -31,14 +31,17 @@ export function HiringBanner({ className }: HiringBannerProps) {
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center md:max-w-3xl">
           <h2 className="font-heading text-2xl font-bold leading-tight tracking-tight text-white md:text-3xl lg:text-[2rem]">
-            We&apos;re growing. Come build with us.
+            Bring WiseStudent to your school
           </h2>
           <p className="mt-4 text-base leading-relaxed text-white/85 md:mt-5 md:text-lg">
-            Open roles across engineering, design, and growth.
+            Start preparing students for life before life tests them.
           </p>
-          <div className="mt-8 md:mt-9">
+          <p className="mt-3 text-sm font-medium uppercase tracking-[0.14em] text-white/75 md:text-base">
+            Building the infrastructure for life-ready generations.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-9">
             <Link
-              href="/careers"
+              href="/contact"
               className={cn(
                 "inline-flex min-h-[48px] items-center justify-center gap-2 rounded-lg px-8 py-3 text-base font-semibold",
                 "bg-white text-background shadow-md shadow-black/10",
@@ -48,8 +51,21 @@ export function HiringBanner({ className }: HiringBannerProps) {
                 "active:scale-[0.98]"
               )}
             >
-              View Open Roles
+              Request Access
               <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
+            </Link>
+            <Link
+              href="/contact"
+              className={cn(
+                "inline-flex min-h-[48px] items-center justify-center gap-2 rounded-lg px-8 py-3 text-base font-semibold",
+                "border border-white/20 bg-white/10 text-white",
+                "transition-[transform,background-color,border-color] duration-200 ease-out",
+                "hover:border-white/30 hover:bg-white/14",
+                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
+                "active:scale-[0.98]"
+              )}
+            >
+              Book a Demo
             </Link>
           </div>
         </div>
